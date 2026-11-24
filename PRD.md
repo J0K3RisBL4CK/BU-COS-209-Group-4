@@ -8,8 +8,8 @@
 
 ### 1.1 The Problem 
  Students over the university normally deal with slow connection ,dead zones when trying to acess the portal or submit an assignment and also during online classes
- - *. Wasted time and movement :  when students have to do an assignment and the network is slow it wastes a lot of time and start having to move around the vicinity .
- - *. Waste of money : when students keeps buying data and the connection is slow or none it is never used to the fullest which puts the students at a lost.
+ - . Wasted time and movement :  when students have to do an assignment and the network is slow it wastes a lot of time and start having to move around the vicinity .
+ - . Waste of money : when students keeps buying data and the connection is slow or none it is never used to the fullest which puts the students at a lost.
 
 
  ### 1.2 Who has this problem 
@@ -32,8 +32,8 @@
 
 
 ### 2.3 Why Current Solutions Fall Short
-- ** WhatsApp & Group Chats: Questions get buried quickly, lack verified timestamps, and rarely confirm whether a fix has happened.
-- ** Walking Around: Signal bars do not guarantee usable throughput or low latency, while walking around trying to ground the network.
+-  WhatsApp & Group Chats: Questions get buried quickly, lack verified timestamps, and rarely confirm whether a fix has happened.
+-  Walking Around: Signal bars do not guarantee usable throughput or low latency, while walking around trying to ground the network.
 -  Repeated Retries & Mobile Data Fallbacks: Retrying on flaky connections wastes time and can cause duplicate actions, while mobile data is costly and still struggles in dead zones.
 
 
