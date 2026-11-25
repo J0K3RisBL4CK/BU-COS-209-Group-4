@@ -4,7 +4,7 @@
 **Course:** BU-COS 209  
 
 
----
+
 
 ## 1. Product Overview
 
@@ -16,7 +16,7 @@ Netpulse is a simple backend hub that collects time-stamped connectivity reports
 
 **Proposed solution:** authenticated users submit short reports for a campus location; the system aggregates recent reports into a current status; authorised ICT staff post official notices and move issues through a three-state lifecycle (Reported → Investigating → Resolved).
 
----
+
 
 ## 2. Problem Statement
 
@@ -47,7 +47,7 @@ Students across the university normally deal with slow connections and dead zone
 - **Walking around:** signal bars do not guarantee usable throughput or low latency.
 - **Repeated retries & mobile-data fallbacks:** retrying on flaky connections wastes time and can cause duplicate actions, while mobile data is costly and still struggles in dead zones.
 
----
+
 
 ## 3. Business Objectives
 
@@ -59,7 +59,7 @@ What the organisation/product team wants to achieve:
 - Increase confidence in portal access, assignment submission, and online classes during peak periods.
 - Provide an auditable record of official status changes for accountability.
 
----
+
 
 ## 4. Target Users
 
@@ -68,7 +68,7 @@ What the organisation/product team wants to achieve:
 - **Administrators (secondary):** manage university locations, user roles, and moderation rules, and review audit logs of official status changes.
 - **Academic staff (affected group):** need reliable connectivity for classes and assignments; whether they need a separate account role is an open question (see §11).
 
----
+
 
 ## 5. Stakeholders
 
@@ -82,7 +82,7 @@ What the organisation/product team wants to achieve:
 
 
 
----
+
 
 ## 6. User Stories
 
@@ -96,7 +96,7 @@ What the organisation/product team wants to achieve:
 
 ## 7. Functional Requirements
 
-Functional requirements describe **what the system must do**.
+
 
  Requirement | Priority |
 | --- | --- |
@@ -115,7 +115,6 @@ Only authorised ICT/admin users can publish official updates or change issue sta
 
 ## 8. Non-Functional Requirements
 
-Non-functional requirements describe **how well the system operates** and the constraints it must satisfy. Targets should be measurable wherever possible.
 
 | Category | Requirement / target |
 | --- | --- |
@@ -134,9 +133,9 @@ Non-functional requirements describe **how well the system operates** and the co
 
 ## 9. Scope and Priorities
 
-### 9.1 Minimum Viable Product (first release)
+### 9.1 Minimum Viable Product 
 
-The MVP is the smallest version that delivers enough value to validate the approach — not an unfinished product.
+The MVP is the smallest version that delivers enough value to validate the approach.
 
 - Student registration and authentication with roles.
 - Quick connectivity reporting with time-stamped location, connection type, status and optional note.
@@ -147,7 +146,7 @@ The MVP is the smallest version that delivers enough value to validate the appro
 
 ### 9.2 MoSCoW prioritisation
 
-The objective is to build the right product first, not the biggest product first.
+
 
 | Priority | Items | Reason |
 | --- | --- | --- |
@@ -254,5 +253,4 @@ Acceptance criteria define the conditions that must be satisfied before a featur
 - Number of invalid/test reports removed and audit logs reviewed.
 - Student feedback on whether status summaries match their lived experience.
 
----
 
