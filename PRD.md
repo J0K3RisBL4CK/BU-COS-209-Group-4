@@ -63,10 +63,10 @@ What the organisation/product team wants to achieve:
 
 ## 4. Target Users
 
-- **Students (primary):** view current connectivity status summaries for campus locations and submit connectivity reports.
-- **ICT/support staff (primary):** view location summaries and clustered recent reports, post official status notices, and move issues through the issue lifecycle.
-- **Administrators (secondary):** manage university locations, user roles, and moderation rules, and review audit logs of official status changes.
-- **Academic staff (affected group):** need reliable connectivity for classes and assignments; whether they need a separate account role is an open question (see §11).
+- **Students :** view current connectivity status summaries for campus locations and submit connectivity reports.
+- **ICT/support staff :** view location summaries and clustered recent reports, post official status notices, and move issues through the issue lifecycle.
+- **Administrators :** manage university locations, user roles, and moderation rules, and review audit logs of official status changes.
+- **Academic staff :** need reliable connectivity for classes and assignments; whether they need a separate account role is an open question .
 
 
 
