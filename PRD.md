@@ -2,7 +2,7 @@
 
 **Project Title:** Netpulse  
 **Course:** BU-COS 209  
-**Document status:** Draft — updated using the BU-209 Week 4 stakeholder-meeting and PRD guidance. Confirmed findings and unanswered questions are kept separate below.
+
 
 ---
 
@@ -72,7 +72,6 @@ What the organisation/product team wants to achieve:
 
 ## 5. Stakeholders
 
-A stakeholder is any person or group with an interest in the product, its development, operation, or success. Different stakeholders have different expectations, so the PRD records their interests explicitly.
 
 | Stakeholder | Interest in Netpulse | Involvement |
 | --- | --- | --- |
@@ -80,27 +79,18 @@ A stakeholder is any person or group with an interest in the product, its develo
 | Academic staff | Reliable connectivity to send messages, set assignments and hold classes | Affected group; interviewed in discovery |
 | ICT support staff | Structured issue awareness and ability to publish authoritative updates | Primary operational users |
 | Administrators | Location/role governance, moderation rules and auditability | Manage configuration and review logs |
-| Course/product owner (BU-COS 209) | Product scope, requirements and deliverables | Approves the PRD and MVP scope |
 
-**Important (Week 4 lesson):** distinguish confirmed decisions from unanswered questions. Never document an assumption as an approved business requirement.
+
 
 ---
 
 ## 6. User Stories
 
-Format: *As a [type of user], I want [an action or feature], so that [the benefit I receive].*
 
-| ID | User story |
-| --- | --- |
-| US-01 | As a student, I want to submit a time-stamped connectivity report for a campus location so that ICT can see current conditions. |
-| US-02 | As a student, I want to check a location's status summary so that I can decide whether to start a class/assignment or move elsewhere. |
-| US-03 | As an ICT staff member, I want to see clustered recent reports for a location so that I can understand the problem before responding. |
-| US-04 | As an ICT staff member, I want to move a location issue from Reported to Investigating to Resolved so that students see an accurate lifecycle. |
-| US-05 | As an ICT staff member, I want to post an official status notice so that students receive an authoritative update. |
-| US-06 | As an ICT staff member, I want to remove invalid or test reports so that status summaries remain trustworthy. |
-| US-07 | As an administrator, I want to manage locations and roles so that reporting stays organised and access is controlled. |
-| US-08 | As an administrator, I want to review audit logs of official status changes so that accountability is maintained. |
-| US-09 | As a student on a flaky connection, I want a retried submission to be recognised as a duplicate so that no duplicate reports are created. |
+ User story 
+
+ As a student, I want to submit a time-stamped connectivity report for a campus location so that ICT can see current conditions.  As a student, I want to check a location's status summary so that I can decide whether to start a class/assignment or move elsewhere. As an ICT staff member, I want to see clustered recent reports for a location so that I can understand the problem before responding. |
+ As an ICT staff member, I want to move a location issue from Reported to Investigating to Resolved so that students see an accurate lifecycle. |
 
 ---
 
@@ -108,21 +98,18 @@ Format: *As a [type of user], I want [an action or feature], so that [the benefi
 
 Functional requirements describe **what the system must do**.
 
-| ID | Requirement | Priority |
-| --- | --- | --- |
-| FR-01 | Authenticated users can register/log in and are assigned a role: Student, ICT_Staff or Admin. | Must |
-| FR-02 | Students can submit a connectivity report for a campus location by selecting **Location**, **Connection Type** (Campus Wi-Fi, Mobile Data, Other) and **Status** (Good, Slow/Lagging, Outage/No connection — label to confirm). | Must |
-| FR-03 | A report may include an optional short note. | Must |
-| FR-04 | Users can view a location status summary: aggregated status, number of recent reports, latest update time, and whether data is fresh or stale. | Must |
-| FR-05 | Reports outside the agreed freshness window are excluded from live status and marked stale rather than treated as current conditions. | Must |
-| FR-06 | Duplicate submissions carrying the same **Client Request ID** are ignored instead of creating multiple identical reports. | Must |
-| FR-07 | ICT staff can view clustered recent reports for a location. | Must |
-| FR-08 | ICT staff can move a location issue through **Reported → Investigating → Resolved** and attach an official note. | Must |
-| FR-09 | Only authorised ICT/admin users can publish official updates or change issue state; each change records who made it and when. | Must |
-| FR-10 | ICT/admin users can remove invalid or test reports. | Should |
-| FR-11 | Administrators can manage university locations, user roles and moderation rules. | Should |
-| FR-12 | Administrators can review audit logs of official status changes. | Should |
-| FR-13 | The system stores status logs with Location ID, actor, previous state, new state, official note and timestamp. | Must |
+ Requirement | Priority |
+| --- | --- |
+ Authenticated users can register/log in and are assigned a role: Student, ICT_Staff or Admin. | Must |
+ Students can submit a connectivity report for a campus location by selecting **Location**, **Connection Type** (Campus Wi-Fi, Mobile Data, Other) and **Status** (Good, Slow/Lagging, Outage/No connection — label to confirm). | Must |
+ A report may include an optional short note. | Must |
+ Users can view a location status summary: aggregated status, number of recent reports, latest update time, and whether data is fresh or stale. | Must |
+ Reports outside the agreed freshness window are excluded from live status and marked stale rather than treated as current conditions. | Must |
+
+ ICT staff can move a location issue through **Reported → Invetigating → Resolved** and attach an official note. | Must |
+Only authorised ICT/admin users can publish official updates or change issue state; each change records who made it and when. | Must |
+ ICT/admin users can remove invalid or test reports. | Should |
+ The system stores status logs with Location ID, actor, previous state, new state, official note and timestamp. | Must |
 
 ---
 
@@ -175,7 +162,7 @@ The objective is to build the right product first, not the biggest product first
 
 Acceptance criteria define the conditions that must be satisfied before a feature is considered complete.
 
-### AC-01 — Submit a connectivity report (US-01, FR-02, FR-03, FR-06)
+###  — Submit a connectivity report 
 
 - The user must be authenticated.
 - A location must be selected from the managed location list.
@@ -185,25 +172,25 @@ Acceptance criteria define the conditions that must be satisfied before a featur
 - A valid report is stored with a timestamp and its Client Request ID.
 - A repeated submission with the same Client Request ID succeeds without creating a second report.
 
-### AC-02 — View location status (US-02, FR-04, FR-05)
+###  — View location status 
 
 - The response includes aggregated status, recent report count, latest update time and a fresh/stale flag.
 - Reports older than the freshness window are excluded from live status.
 - A location with no recent reports shows “No recent data” rather than an outdated “Good” status.
 
-### AC-03 — Move issue state (US-04, FR-08, FR-09, FR-13)
+###  — Move issue state 
 
 - Only ICT_Staff or Admin users can change issue state.
 - Only the transitions Reported → Investigating → Resolved are available in the first release.
 - Each transition records actor, timestamp, previous state, new state and optional official note.
 - Students viewing the location see the updated state.
 
-### AC-04 — Post official status notice (US-05, FR-09)
+###  — Post official status notice 
 
 - Only authorised ICT/admin users can post a notice.
 - The notice includes text and a timestamp and appears on the location status view.
 
-### AC-05 — Remove invalid report (US-06, FR-10)
+###  — Remove invalid report
 
 - Only ICT/admin users can remove a report.
 - The removal is recorded so status summaries and audit history remain explainable.
@@ -212,7 +199,7 @@ Acceptance criteria define the conditions that must be satisfied before a featur
 
 ## 11. Assumptions and Open Questions
 
-### Assumptions (not yet approved requirements)
+### Assumptions 
 
 - Reports are submitted by authenticated users; anonymous reporting is not planned for the first release.
 - Existing university accounts can be reused for authentication (to confirm).
@@ -220,7 +207,7 @@ Acceptance criteria define the conditions that must be satisfied before a featur
 - Web-based access is sufficient for the first release (to confirm).
 - The freshness window and uptime target will be agreed with stakeholders before implementation.
 
-### Open questions (require stakeholder confirmation)
+### Open questions 
 
 - How will student and staff identity be verified?
 - What exactly counts as a “recent” report — what is the freshness window?
@@ -233,7 +220,7 @@ Acceptance criteria define the conditions that must be satisfied before a featur
 
 ---
 
-## 12. Backend Logic & Data Design (Language-Agnostic)
+## 12. Backend Logic & Data Design 
 
 ### 12.1 Data we store
 
@@ -258,7 +245,7 @@ Acceptance criteria define the conditions that must be satisfied before a featur
 - Faster, more structured issue awareness for ICT staff instead of scattered chat complaints.
 - Lightweight, reliable status checks and safe retries suited to unstable campus connections.
 
-### Success metrics (targets to be confirmed)
+### Success metrics 
 
 - Number of registered students and active locations covered.
 - Number of active reports and active reporters per week.
